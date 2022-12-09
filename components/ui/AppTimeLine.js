@@ -9,7 +9,7 @@ export default function AppTimeLine(props) {
   return (
     <View style={styles.container}>
        <FlatList
-          data={listData}
+        data={listData}
           renderItem={({ item, index }) =>
             <View style={styles.listContainer}>
               <View style={styles.circle}></View>
@@ -19,6 +19,7 @@ export default function AppTimeLine(props) {
           </View>
         }
         keyExtractor={item => item?._id}
+        contentContainerStyle={{ paddingBottom: 220 }}
       />
     </View>
   )

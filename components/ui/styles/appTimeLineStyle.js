@@ -5,6 +5,9 @@ export default styles = StyleSheet.create({
   container: {
     paddingVertical: 10,
   },
+  historyContainer: {
+    marginBottom: 220,
+  },
   listContainer: {
     marginLeft: "26%",
     paddingVertical: 10,

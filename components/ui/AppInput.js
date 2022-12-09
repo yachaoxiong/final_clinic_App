@@ -12,7 +12,7 @@ export default function AppInput(props) {
       <TextInput
         style={isFocused ? styles.inputFocused : styles.input}
         placeholder={placeholder}
-        value={value.toString()}
+        value={value?.toString()}
         onChangeText={text => onChangeText(text)}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}

@@ -29,6 +29,7 @@ export default function Info(props) {
   }
 
   return (
+    patient &&
     <ScrollView>
       <PatientDetailsCard patient={patient} />
       <BMICard patient={patient} />

@@ -49,7 +49,7 @@ export default function HomeScreen(props) {
         <FlatList 
           style={styles.patientsContainer}
           data={filteredPatients()}
-          renderItem={({ item }) => <PatientCard patient={item} onPress={() => props.navigation.navigate('PatientDetails', { patient:item })} />}
+          renderItem={({ item }) => <PatientCard patient={item} onPress={() => props.navigation.navigate('PatientDetails', { patientId:item._id })} />}
           keyExtractor={item => item._id}
           contentContainerStyle={{ paddingBottom: 120 }}
         />  

@@ -12,9 +12,11 @@ import AppInput from '../components/ui/AppInput';
 import AppSelect from '../components/ui/AppSelect';
 import { addNewRecord } from '../services/patientServices';
 import { StoreContext } from '../store/store';
+import usePatientByIdHooks from '../hooks/usePatientByIdHooks';
 export default function PatientDetails(props) {
 
-  const { patient } = props.route.params;
+  const { patientId } = props.route.params;
+  const patient = usePatientByIdHooks(patientId)
   const { setIsRefreshing } = useContext(StoreContext);
   const tabs = ['Info', 'Record', 'History'];
   const [activeTab, setActiveTab] = useState("Info");
@@ -81,7 +83,7 @@ export default function PatientDetails(props) {
     <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.headerRow}>
-        <Text style={styles.headerText}>{patient.firstName} {patient.lastName}</Text>
+        <Text style={styles.headerText}>{patient?.firstName} {patient?.lastName}</Text>
         <AppButton
           title="Add Record"
           buttonType="outlineSmall"
@@ -89,8 +91,8 @@ export default function PatientDetails(props) {
         />
         </View>
         <View style={styles.headerRow}>
-          <Text style={styles.headerDepartment}>{patient.department}</Text>
-          <Text style={styles.headerDoctor}>{patient.doctor.username}</Text>
+          <Text style={styles.headerDepartment}>{patient?.department}</Text>
+          <Text style={styles.headerDoctor}>{patient?.doctor.username}</Text>
         </View>
       </View>
       <TabsBar tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />

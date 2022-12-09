@@ -36,7 +36,7 @@ export default function TestCard(props) {
         <Text style={styles.type}>{record.category} ({record.category === 'Blood Pressure' ? 'X/Y mmHg' : record.category === 'Blood Oxygen Level' ? '%' : 'bpm'})</Text>
         <Text style={styles.date}>
           <AntDesign name="clockcircleo" size={12} color="#b4b4b4" />
-          {moment(record.date).format('DD/MM/YYYY HH:mm')}
+          {moment(record.createdAt).format('DD/MM/YYYY HH:mm')}
         </Text>
       </View>  
     </View>
